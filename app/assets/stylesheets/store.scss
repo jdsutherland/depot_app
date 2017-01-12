@@ -6,7 +6,7 @@ $violet:  #77d;
     color:          #226;
     font:           150% sans-serif;
     margin:         0;
-    padding-bottom: 0.5em;
+    padding-bottom: .5em;
   }
 
   .entry {
@@ -33,9 +33,14 @@ $violet:  #77d;
 
     p,
     div.price_line {
-      margin-bottom: 0.8em;
+      margin-bottom: .8em;
       margin-left:   100px;
-      margin-top:    0.5em;
+      margin-top:    .5em;
+
+      form,
+      div {
+        display: inline;
+      }
     }
 
     .price {
