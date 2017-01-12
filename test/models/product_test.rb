@@ -53,23 +53,23 @@ class ProductTest < ActiveSupport::TestCase
     assert_not duplicate_product.valid?
   end
 
-  test "image url" do
+  test "image url is valid" do
     ok = %w{ fred.gif fred.jpg fred.png FRED.JPG FRED.Jpg
           http://a.b.c/x/y/z/fred.gif }
     bad = %w{ fred.doc fred.gif/more fred.gif.more }
 
     ok.each do |name|
-      assert new_product(name).valid?
+      assert new_product_from_img_url(name).valid?
     end
 
     bad.each do |name|
-      assert_not new_product(name).valid?
+      assert_not new_product_from_img_url(name).valid?
     end
   end
 
   private
 
-  def new_product(image_url)
+  def new_product_from_img_url(image_url)
     product = Product.new(
       title:       'Example Product',
       description: 'Example description',
