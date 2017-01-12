@@ -1,12 +1,6 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Books Online Store</title>
-    <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%= render "layouts/rails_default" %>
 
   <body class='<%= controller.controller_name %>'>
     <div id="banner">
@@ -16,7 +10,7 @@
     <div id="columns">
       <div id="side">
         <ul>
-          <li><a href="http://www....">Home</a></li>
+          <li><%= link_to "Home", root_path %></li>
           <li><a href="http://www..../questions">Questions</a></li>
           <li><a href="http://www..../news">News</a></li>
           <li><a href="http://www..../contact">Contact</a></li>
