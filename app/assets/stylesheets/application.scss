@@ -18,6 +18,26 @@
 
 body, body > p, body > ol, body > ul, body > td {margin: 8px !important}
 
+form,
+div {
+  display: inline;
+}
+
+input {
+  font-size: small;
+}
+
+#cart {
+  font-size: small;
+  color: white;
+
+  table {
+    border-bottom: 1px dotted #595;
+    border-top:    1px dotted #595;
+    margin-bottom: 10px;
+  }
+}
+
 #banner {
   background:    #9c9;
   border-bottom: 2px solid;
