@@ -34,7 +34,7 @@ class OrdersControllerTest < ActionDispatch::IntegrationTest
       } }
     end
 
-    assert_redirected_to order_url(Order.last)
+    assert_redirected_to store_index_url
   end
 
   test "should show order" do

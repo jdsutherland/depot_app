@@ -22,11 +22,15 @@ class OrdersController < ApplicationController
 
   def create
     @order = Order.new(order_params)
+    @order.add_line_items_from_cart(@cart)
 
     respond_to do |format|
       if @order.save
+        Cart.destroy(session[:cart_id])
+        session.delete(:cart_id)
+
         format.html do
-          redirect_to @order, notice: 'Order was successfully created.'
+          redirect_to store_index_url, notice: 'Thank you for your order.'
         end
         format.json { render :show, status: :created, location: @order }
       else
