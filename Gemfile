@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'activemodel-serializers-xml'
 gem 'coffee-rails', '~> 4.2'
 gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
