@@ -15,4 +15,7 @@ module ApplicationHelper
     content_tag('div', attributes, &block)
   end
 
+  def on_checkout_page?
+    current_page? new_order_path
+  end
 end
