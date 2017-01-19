@@ -7,8 +7,10 @@ Rails.application.routes.draw do
   resources :products
 
   resources :line_items do
-    member do
-      post 'decrement'
-    end
+    post :decrement, on: :member
+  end
+
+  resources :products do
+    get :who_bought, on: :member
   end
 end
