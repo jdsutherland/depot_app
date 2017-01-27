@@ -29,6 +29,8 @@ class OrdersController < ApplicationController
         Cart.destroy(session[:cart_id])
         session.delete(:cart_id)
 
+        OrderMailer.received(@order).deliver_later
+
         format.html do
           redirect_to store_index_url, notice: 'Thank you for your order.'
         end
