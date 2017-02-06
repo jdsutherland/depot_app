@@ -31,7 +31,7 @@ class UsersController < ApplicationController
         format.html do
           redirect_to users_url, notice: "User #{@user.name} was successfully created."
         end
-        format.json { render :show, status: :created, location: @user }
+      format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new }
         format.json { render json: @user.errors, status: :unprocessable_entity }
@@ -63,6 +63,10 @@ class UsersController < ApplicationController
       format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  rescue_from 'User::Error' do |exception|
+    redirect_to users_url, notice: exception.message
   end
 
   private

@@ -1,3 +1,6 @@
+User.create!(name:         "test",
+             password:     "test")
+
 Product.delete_all
 Product.create(title: 'Rails, Angular, Postgres, and Bootstrap',
   description:
